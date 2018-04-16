@@ -1,0 +1,60 @@
+
+------------ view.component.ts ----------------------------------
+
+import { Component, OnInit } from '@angular/core';
+import{HttpService}from'../http.service';
+import{Http,Response,Headers}from '@angular/http';
+@Component({
+  selector: 'app-view',
+  templateUrl: './view.component.html',
+  styleUrls: ['./view.component.css'],
+  providers:[HttpService]
+})
+export class ViewComponent implements OnInit {
+
+   data:any;
+   
+  constructor( private myservice:HttpService, private m:Http) { }
+  
+  getValue()
+  {
+     this.myservice.fetchData().subscribe(result=>{this.data=result})
+  }
+
+  ngOnInit() {
+    this.getValue();
+  }
+  
+  // Delete details
+  // Here I have imported Htpp, headers, Response for get Http class file to get delete() method
+  id:number;
+  private headers = new Headers({'Content-type':'application/json'});
+
+  delete(id)
+  {
+     if(confirm("Sure to remove"))
+     {
+       const url=`${"http://localhost:3030/mydetails"}/${id}`;
+       return this.m.delete(url,{headers:this.headers}).
+       toPromise().then(()=>{ this.getValue(); })
+     }
+  }
+
+}
+--------------------------------------- view.component.html -----------------------------
+
+<style>
+  a{color:red;cursor:pointer;}
+</style>
+<h2>View Component</h2>
+<a   routerLink="/">Go Back</a>
+<table>
+  <tr *ngFor="let list of data">
+        <td>{{list.id}}</td> 
+        <td>{{list.name}}</td>
+        <td>{{list.age}}</td>
+        <td>{{list.mobile}}</td>
+       
+        <td (click)="delete(list.id)"><a >DELETE</a></td>
+   </tr>
+</table>
