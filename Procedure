@@ -1,0 +1,10 @@
+1. Install json server globally ( npm install -g json-server )
+2. Create Http.service.ts in app folder for injecting the service to corresponding location( other components)
+3. Create your json file ( mydetails.json ) in app folder
+4. Go to run the command ( json-server --watch db.json --port 3030 ) in app folder to change the port and get it in service file
+   // https://localhost:3030/mydetails
+5. Go and refer my Angular2_HTTP_Service Repository  for Injecting the service to other components
+6. Create View component and follw the http service to get all details from mydetails.json
+7. Import correspong RouteModule, HttpModule to access the View Components
+8. Create add component to push new deatails intom server
+ ------------------ Thank you-------------------------------------
