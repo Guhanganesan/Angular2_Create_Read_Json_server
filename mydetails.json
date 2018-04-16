@@ -1,0 +1,29 @@
+// This file should be in app folder
+{
+  "mydetails": [
+    {
+      "id": 1,
+      "name": "Guhan",
+      "age": 27,
+      "mobile": 9787678
+    },
+    {
+      "id": 2,
+      "name": "Anbu",
+      "age": 23,
+      "mobile": 679896
+    },
+    {
+      "id": 3,
+      "name": "Kumar",
+      "age": 25,
+      "mobile": 4245365
+    },
+    {
+      "name": "Mathan",
+      "age": "27",
+      "mobile": "8758743",
+      "id": 4
+    }
+  ]
+}
