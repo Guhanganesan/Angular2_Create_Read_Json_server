@@ -1,0 +1,20 @@
+<h2>Add new data here!!</h2>
+
+<a routerLink="/">Go Back</a>
+<br><br>
+
+
+<form #myformsdata="ngForm" (ngSubmit)="addComponent(myformsdata.value)">
+     <input name="name" placeholder="Enter Name" ngModel><br><br>
+     <input name="age" placeholder="Enter Age" ngModel><br><br>
+     <input name="mobile" placeholder="Enter Mobile" ngModel><br><br>
+     <input type="submit" value="submit">
+</form>
+
+<p>{{error}}</p>
+
+<p>{{myjsondata.name}}</p>
+<p>{{myjsondata.age}}</p>
+<p>{{myjsondata.mobile}}</p>
+
+<p>{{success}}</p>
