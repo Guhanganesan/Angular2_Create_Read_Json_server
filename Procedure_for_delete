@@ -26,7 +26,9 @@ export class ViewComponent implements OnInit {
   }
   
   // Delete details
+  
   // Here I have imported Htpp, headers, Response for get Http class file to get delete() method
+  
   id:number;
   private headers = new Headers({'Content-type':'application/json'});
 
